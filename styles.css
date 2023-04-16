@@ -1,0 +1,73 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+main {
+    width: 850px;
+    height: 450px;
+}
+.container-green {
+    background-color: rgb(135, 217, 135);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    font-family: Arial;
+}
+.green-bar {
+    width: 100%;
+    height: 20%;
+    background-color: rgb(9, 88, 9);
+    display: flex;
+    justify-content: center;
+    color: wheat;
+    font-family: Arial;
+}
+.container-white {
+    background-color: white;
+    width: 573px;
+    height: 375px;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Aktu {
+    font-size: medium;
+}
+.ll {
+    position: absolute;
+    bottom: 290px;
+    left: 45%;
+}
+.lll {
+    position: absolute;
+    bottom: 250px;
+    left: 44.5%;
+}
+table, th, td {
+    border: 2px solid green;
+    padding: 10px;
+}
+button {
+    background-color: rgb(17, 83, 17);
+    color: white;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    transition: all 250ms;
+}
+button:hover {
+    background-color: green;
+}
+button:active {
+    color: aqua;
+    border: 1px solid purple;
+}
+#cart {
+    width: 100%;
+    text-align: center;
+}

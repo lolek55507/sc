@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script></script>
+    <title>Sieci Komputerowe</title>    
+</head>
+<body onload="checkCol(rowa);
+checkColl(rowb);
+checkColll(rowc);
+checkCollll(rowd);" >
+    <main>
+        <div class="green-bar">
+            <h1>Sieci Komputerowe</h1>
+        </div>
+        <div class="container-green">
+            <div>
+            <h1 class="Aktu">Aktualizacja i zamowiena materialow</h1>
+            <p>Do wewnetrznego uzytku firmy</p>
+            </div>
+            
+            <div class="container-white">
+                <table>
+                    <tr>
+                      <th>Product</th>
+                      <th>dostepna ilosc</th>
+                      <th>Aktualizacja</th>
+                      <th>zamowienie</th>
+                    </tr>
+                    <tr>
+                      <td id="proa">skretka U/utp</td>
+                      <td  id='val1'><p id="rowa">0</p></td>
+                      <td><button onclick="updatea()">Aktualizacja</button></td>
+                      <td><button onclick="ordera()">Zamow</button></td>
+                    </tr>
+                    <tr>
+                      <td id="prob">skretka U/utp linka</td>
+                      <td id="val2"><p  id="rowb">2</p></td>
+                      <td><button onclick="updateb()">Aktualizacja</button></td>
+                      <td><button onclick="orderb()">Zamow</button></td>
+                    </tr>
+                    <tr>
+                        <td id="proc">wtyki 8PBC</td>
+                        <td id="val3" ><p id="rowc">10</p></td>
+                        <td><button onclick="updatec()">Aktualizacja</button></td>
+                        <td><button onclick="orderc()">Zamow</button></td>
+                      </tr>
+                      <tr>
+                        <td id="prod">moduly keystone</td>
+                        <td id="val4" ><p id="rowd">30</p></td>
+                        <td><button onclick="updated()">Aktualizacja</button></td>
+                        <td><button onclick="orderd()">Zamow</button></td>
+                      </tr>
+                  </table>
+            </div>
+            <a class="ll" href="#">nasza strona Internetowa</a>
+            <p class="lll">Strone przygotowal Stefan :</p>
+        </div>
+        <button onclick="clearTheCart()" class="cart-cleaner">wyczysc cala carte</button>
+        <div id="cart">
+            
+        </div>
+        
+        
+    </main>
+    <script>
+        let val1 = document.getElementById('val1');
+        let val2 = document.getElementById('val2');
+        let val3 = document.getElementById('val3');
+        let val4 = document.getElementById('val4');
+        let rowa = document.getElementById('rowa').innerHTML;
+        let rowb = document.getElementById('rowb').innerHTML;
+        let rowc = document.getElementById('rowc').innerHTML;
+        let rowd = document.getElementById('rowd').innerHTML;
+        function checkCol (i) {
+            if (i == 0) {
+                document.getElementById('val1').style.backgroundColor = "red"; 
+            } else if(i <=5 && i >= 1) {
+                document.getElementById('val1').style.backgroundColor = "yellow"; 
+            } else {
+                document.getElementById('val1').style.backgroundColor = "honeydew";
+            }
+        }
+        function checkColl (i) {
+            if (i == 0) {
+                document.getElementById('val2').style.backgroundColor = "red"; 
+            } else if(i <=5 && i >= 1) {
+                document.getElementById('val2').style.backgroundColor = "yellow"; 
+            } else {
+                document.getElementById('val2').style.backgroundColor = "honeydew";
+            }
+        }
+        function checkColll (i) {
+            if (i == 0) {
+                document.getElementById('val3').style.backgroundColor = "red"; 
+            } else if(i <=5 && i >= 1) {
+                document.getElementById('val3').style.backgroundColor = "yellow"; 
+            } else {
+                document.getElementById('val3').style.backgroundColor = "honeydew";
+            }
+            
+        }
+        function checkCollll (i) {
+            if (i == 0) {
+                document.getElementById('val4').style.backgroundColor = "red"; 
+            } else if(i <=5 && i >= 1) {
+                document.getElementById('val4').style.backgroundColor = "yellow"; 
+            } else {
+                document.getElementById('val4').style.backgroundColor = "honeydew";
+            }
+        }
+        function updatea() {
+            let newValue = prompt("Please type your new value");
+            document.getElementById('rowa').innerText = newValue;
+            checkCol(newValue);
+        }
+        function updateb() {
+            let newValue = prompt("Please type your new value");
+            document.getElementById('rowb').innerText = newValue;
+            checkColl(newValue);
+        }
+        function updatec() {
+            let newValue = prompt("Please type your new value");
+            document.getElementById('rowc').innerText = newValue;
+            checkColll(newValue);
+        }
+        function updated() {
+            let newValue = prompt("Please type your new value");
+            document.getElementById('rowd').innerText = newValue;
+            checkCollll(newValue);
+        }
+        function ordera() {
+            let war = document.getElementById('proa').innerHTML;
+            let pick = document.getElementById('rowa').innerHTML;
+            if (pick <= 0){
+
+            }else {
+                let pick = document.getElementById('rowa').innerHTML--;
+            }
+            let i = document.getElementById('rowa').innerText;
+            if (i == 0) {
+                document.getElementById('val1').style.backgroundColor = "red"; 
+            } else if(i <=5 && i >= 1) {
+                document.getElementById('val1').style.backgroundColor = "yellow"; 
+            } else {
+                document.getElementById('val1').style.backgroundColor = "honeydew";
+            }
+            let ip = Math.floor(Math.random() * 100000000);
+            ip++;
+            let div = document.createElement('div');
+            div.innerText = "zamowienie nr: " + ip + " nazwa produktu: " + war;
+            cart.appendChild(div);
+            document.getElementById('rowa').innerText = newValue;
+            checkCol(newValue);
+            
+        }
+        function orderb() {
+            let war = document.getElementById('prob').innerHTML;
+            let pick = document.getElementById('rowb').innerHTML;
+            if (pick <= 0){
+
+            }else {
+                let pick = document.getElementById('rowb').innerHTML--;
+            }
+            let i = document.getElementById('rowb').innerText;
+            if (i == 0) {
+                document.getElementById('val2').style.backgroundColor = "red"; 
+            } else if(i <=5 && i >= 1) {
+                document.getElementById('val2').style.backgroundColor = "yellow"; 
+            } else {
+                document.getElementById('val2').style.backgroundColor = "honeydew";
+            }
+
+            let ip = Math.floor(Math.random() * 100000000);
+            ip++;
+            let div = document.createElement('div');
+            div.innerText = "zamowienie nr: " + ip + " nazwa produktu: " + war;
+            cart.appendChild(div);
+            document.getElementById('rowb').innerText = newValue;
+            checkCol(newValue);
+        }
+        function orderc() {
+            let war = document.getElementById('proc').innerHTML;
+            let pick = document.getElementById('rowc').innerHTML;
+            if (pick <= 0){
+
+            }else {
+                let pick = document.getElementById('rowc').innerHTML--;
+            }
+            let i = document.getElementById('rowc').innerText;
+            if (i == 0) {
+                document.getElementById('val3').style.backgroundColor = "red"; 
+            } else if(i <=5 && i >= 1) {
+                document.getElementById('val3').style.backgroundColor = "yellow"; 
+            } else {
+                document.getElementById('val3').style.backgroundColor = "honeydew";
+            }
+
+            let ip = Math.floor(Math.random() * 100000000);
+            ip++;
+            let div = document.createElement('div');
+            div.innerText = "zamowienie nr: " + ip + " nazwa produktu: " + war;
+            cart.appendChild(div);
+        }
+        function orderd() {
+            let war = document.getElementById('prod').innerText;
+            let pick = document.getElementById('rowd').innerHTML;
+            if (pick <= 0){
+
+            }else {
+                let pick = document.getElementById('rowd').innerHTML--;
+            }
+            let i = document.getElementById('rowd').innerText;
+            if (i == 0) {
+                document.getElementById('val4').style.backgroundColor = "red"; 
+            } else if(i <=5 && i >= 1) {
+                document.getElementById('val4').style.backgroundColor = "yellow"; 
+            } else {
+                document.getElementById('val4').style.backgroundColor = "honeydew";
+            }
+
+            let ip = Math.floor(Math.random() * 100000000);
+            ip++;
+            let div = document.createElement('div');
+            div.innerText = "zamowienie nr: " + ip + " nazwa produktu: " + war;
+            cart.appendChild(div);
+        }
+        function clearTheCart() {
+            cart.innerHTML = "";
+        }
+    </script>
+    
+</body>
+</html>
